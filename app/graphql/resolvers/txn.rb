@@ -7,7 +7,7 @@ module Resolvers
     argument :id, ID, required: true
 
     def resolve(id:, lookahead:)
-      options = context[:api_options].merge(expand: [])
+      options = context[:per_request_configuration].merge(expand: [])
 
       options[:expand].push('merchant') if lookahead.selects?(:merchant)
 

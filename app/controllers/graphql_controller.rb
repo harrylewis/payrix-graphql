@@ -11,7 +11,7 @@ class GraphqlController < ApplicationController
     query = params[:query]
     operation_name = params[:operationName]
     context = {
-      api_options: {
+      per_request_configuration: {
         api_key: request.headers["HTTP_API_KEY"],
       },
     }
