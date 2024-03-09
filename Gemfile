@@ -45,3 +45,5 @@ group :development do
   # gem "spring"
 end
 
+# Serve API through GraphQL
+gem "graphql"
