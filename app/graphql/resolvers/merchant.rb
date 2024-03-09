@@ -12,6 +12,8 @@ module Resolvers
       options[:expand].push("creator") if lookahead.selects?(:creator)
 
       Payrix::Merchant.retrieve(id, options)
+    rescue Payrix::NotFoundError
+      nil
     end
   end
 end
