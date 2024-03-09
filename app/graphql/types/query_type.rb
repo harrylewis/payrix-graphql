@@ -27,5 +27,8 @@ module Types
     def test_field
       "Hello World!"
     end
+
+    field :txn, resolver: Resolvers::Txn,
+      description: "Look up a txn by ID."
   end
 end
