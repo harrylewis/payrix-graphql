@@ -29,6 +29,7 @@ module Types
     end
 
     field :txn, resolver: Resolvers::Txn,
-      description: "Look up a txn by ID."
+      description: "Look up a txn by ID.",
+      extras: [:lookahead]
   end
 end

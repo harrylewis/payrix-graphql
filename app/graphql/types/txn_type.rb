@@ -5,5 +5,6 @@ module Types
     field :id, ID, null: false
     field :total, Integer, null: false
     field :token, String, null: true
+    field :merchant, Types::MerchantType, null: false
   end
 end
