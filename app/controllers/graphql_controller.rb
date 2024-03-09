@@ -13,6 +13,7 @@ class GraphqlController < ApplicationController
     context = {
       per_request_configuration: {
         api_key: request.headers["HTTP_API_KEY"],
+        test_mode: request.headers["HTTP_API_PRODUCTION_MODE"] != "enabled",
       },
     }
     result = PayrixGraphqlSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
