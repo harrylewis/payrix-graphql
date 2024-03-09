@@ -47,3 +47,9 @@ end
 
 # Serve API through GraphQL
 gem "graphql"
+
+# Interactive playground for working with GraphQL
+gem "graphiql-rails"
+
+# For assets management
+gem "propshaft", "~> 0.8.0"
