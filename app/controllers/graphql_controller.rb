@@ -19,8 +19,10 @@ class GraphqlController < ApplicationController
     result = PayrixGraphqlSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result
   rescue StandardError => e
-    raise e unless Rails.env.development?
-    handle_error_in_development(e)
+    # NOTE: We are transmitting full error payload back to our users. This is often considered a security vulnerability
+    # in a production application. This is meant as a developer tool though, and the code is open source. We want the
+    # user to see what is going wrong, so they can correct their usage.
+    handle_error(e)
   end
 
   private
@@ -45,7 +47,7 @@ class GraphqlController < ApplicationController
     end
   end
 
-  def handle_error_in_development(e)
+  def handle_error(e)
     logger.error e.message
     logger.error e.backtrace.join("\n")
 
