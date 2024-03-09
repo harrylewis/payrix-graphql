@@ -53,3 +53,6 @@ gem "graphiql-rails"
 
 # For assets management
 gem "propshaft", "~> 0.8.0"
+
+# Payrix API
+gem "payrix", git: "https://github.com/HiMamaInc/payrix.git"
