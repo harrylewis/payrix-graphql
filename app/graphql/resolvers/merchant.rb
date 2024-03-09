@@ -6,8 +6,10 @@ module Resolvers
 
     argument :id, ID, required: true
 
-    def resolve(id:)
-      options = context[:per_request_configuration]
+    def resolve(id:, lookahead:)
+      options = context[:per_request_configuration].merge(expand: [])
+
+      options[:expand].push("creator") if lookahead.selects?(:creator)
 
       Payrix::Merchant.retrieve(id, options)
     end
