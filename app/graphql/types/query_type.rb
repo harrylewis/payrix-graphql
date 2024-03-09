@@ -24,5 +24,8 @@ module Types
     field :txn, resolver: Resolvers::Txn,
       description: "Look up a txn by ID.",
       extras: [:lookahead]
+
+    field :merchant, resolver: Resolvers::Merchant,
+      description: "Look up a merchant by ID."
   end
 end
