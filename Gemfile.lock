@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/HiMamaInc/payrix.git
-  revision: f501e95d1a87b1f5bb5a3cec8bf419fc72bce672
+  revision: aad2853a9ef5ec8bde30a657d96b48c987f4bb14
+  branch: support-test-mode-parameter
   specs:
     payrix (1.0.0)
       faraday (~> 2.0.1)
