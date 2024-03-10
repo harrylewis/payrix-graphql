@@ -2,6 +2,8 @@
 
 module Types
   class EntityType < BaseObject
+    description 'The top-level resource for a business. Each Entity can describe a Merchant or a Facilitator'
+
     field :id, ID, null: false
     field :created, String, null: false
     field :modified, String, null: false
