@@ -28,5 +28,9 @@ module Types
     field :merchant, resolver: Resolvers::Merchant,
       description: "Look up a merchant by ID.",
       extras: [:lookahead]
+
+    field :entity, resolver: Resolvers::Entity,
+      description: "Look up an entity by ID.",
+      extras: [:lookahead]
   end
 end
