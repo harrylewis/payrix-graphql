@@ -10,6 +10,7 @@ module Resolvers
       options = context[:per_request_configuration].merge(expand: [])
 
       options[:expand].push("creator") if lookahead.selects?(:creator)
+      options[:expand].push("entity") if lookahead.selects?(:entity)
 
       Payrix::Merchant.retrieve(id, options)
     rescue Payrix::NotFoundError
